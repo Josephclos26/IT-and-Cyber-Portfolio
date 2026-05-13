@@ -1,70 +1,55 @@
-# Lab: Active DirectoryDomain Services (AD DS) Deployment
-
-**Date:** May 11, 2026
-
-**Author:** Joseph Carlos
-
+**Date:** May 11, 2026  
+**Author:** Joseph Carlos  
 **Role:** Junior System Administrator (Simulation)
 
 
 
-## Objective
-
-To deploy and configure a primary Domain Controller (DC) to establish a centrailized identity and access management (IAM) system. This lab focuses on the installation, configuration, and promotion of a Windows Server 2022 environment.
-
-
-
-## Tools Used
-
-* **Windows Server 2022:** Primary Network Operating System.
-* **Oracle VirtualBox:** Virtualization platform for environmment isolation.
-* **Active Directory Domain Services (AD DS):** For centralized domain management.
-* **DNS (Domain Name System):** Configured for local name resolution.
+### Project Overview
+This lab demonstrates the end-to-end deployment of a **Windows Server 2022** environment. The project is structured into four distinct phases, covering initial provisioning, domain promotion, security structuring, and large-scale automation.
 
 
 
-## Technical Breakdown
+## Phase 1: Environment Provisioning & Networking
+The goal of this phase was to establish a stable, isolated virtual foundation for the **Domain Controller**.
+
+* **System Identity:** Renamed the host to **DC01** to comply with enterprise naming standards.
+* **Networking:** Configured a **Static IPv4 address (10.0.2.10)** and a **Loopback address (127.0.0.1)** to ensure DNS persistence.
+* **Tools Used:** 
+    * **Oracle VirtualBox:** For environment isolation.
+    * **Windows Server 2022:** Base Operating System.
+    * **VirtualBox Guest Additions:** For driver optimization and scaling.
 
 
 
-### Initial Server Configuration
+## Phase 2: AD DS Installation & Forest Promotion
+In this phase, the standalone server was promoted to a primary Domain Controller to manage the **carlos.local** forest.
 
-* **System Identity:** Renamed the server to DC01 to comply with enterprise naming standards.
-* **Static Networking:** Assigned a static IPV4 address (10.0.2.10) and configured the loopback address (127.0.0.1) for DNS to ensure service persistence.
-* **Optimization:** Installed VirtualBox Guest Additions to improve VM performance and displaying scaling.
-
-
-
-### Active Directory Installation & Promotion
-
-* **Role Deployment:** Installed AD DS and DNS roles through Server Manager.
-* **Forest Creation:** Established a new Active Directory Forest named carlos.local
-* **Troubleshooting:** Identified and resolved a prerequisite failure by enforcing a complex password policy on the local Administrator account prior to promotion.
+* **Role Deployment:** Installed the forest infrastructure and established the root domain.
+* **Troubleshooting:** Enforced a **complex password policy** on the local Administrator account to bypass promotion blocks.
+* **Tools Used:** 
+    * **Server Manager:** For role-based deployment.
+    * **AD DS & DNS:** Core directory and name resolution services.
+    * **Active Directory Domain Services Configuration Wizard:** For forest promotion.
 
 
 
-### Challenges Overcome
+## Phase 3: Identity & Access Management (IAM)
+This phase focused on building a professional directory structure to implement **Role-Based Access Control (RBAC)**.
 
-* **DNS Delegation Warning:** Diagnosed the "Authoritative Parent Zone" warning as a standard byproduct of an isolated lab environment and proceeded with the promotion.
-
-* **Account Security Block:** Resolved a "local Administrator password required" error by updating the system account to meet domain complexity requirements.
-
-
-
-### Enterprise identity & Automation
-
-* **Organizational Hierarchy:** Created a custom Organizational Unit (OU) named **_Employees** to maintain a professional directory structure outside of default system containers.
-* **Security Group Provisioning:** Established the **IT_Admins** Global Security Group to implement Role-Based Access Control (RBAC).
-* **PowerShell AUtomation:** Developed and executed a PowerShell script utilizing a **for** loop to bulk-provision 1,000 yser accounts (User1 - User 1000) within the **_Employees** OU.
-* **Scalability Simulation:** This phase simulates a large-scale corporate onboarding and demonstrates proficiency in System Administration and automation scripting.
+* **Organizational Hierarchy:** Created the **_Employees** OU to separate corporate users from system containers.
+* **Security Groups:** Established the **IT_Admins** Global Security Group to demonstrate proper permission delegation.
+* **Tools Used:** 
+    * **ADUC (Active Directory Users and Computers):** For GUI-based directory management.
+    * **RBAC Principles:** To structure administrative access.
 
 
 
-### Automation Challanges Overcome
+## Phase 4: Automation & Scalability Simulation
+To simulate a real-world corporate onboarding event, I utilized scripting to automate the creation of a large-scale user database.
 
-* **Parameter Binding Error:** Encountered a **ParameterBindingException** when attempting to use a non-standard color ("Gold") in the script.
-* **Syntax Resolution:** Identified and corrected the parameter to "Yellow" using PowerShell color enumerators to ensure a clean execution.
-*  **Network Status Discrepancy:** Observed the Windows "Globe" icon incorrectly reporting no internet access despite active connectivity.
-*  **Connectivity Validation:** Validated the DNS service via browser testing and confirmed the icon as a common visual sync delay in isolated lab environments.
-  
-
+* **Bulk Provisioning:** Executed a script using a **for loop** to generate **1,000 user accounts** (User1 - User1000).
+* **Debugging:** Resolved a **ParameterBindingException** by correcting color enumerators and validated connectivity via browser testing.
+* **Tools Used:** 
+    * **PowerShell:** For automation and logic.
+    * **PowerShell ISE:** For script development and debugging.
+    * **Microsoft Edge:** To validate DNS/Internet connectivity.
