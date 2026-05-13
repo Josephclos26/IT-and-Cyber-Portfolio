@@ -53,18 +53,18 @@ To deploy and configure a primary Domain Controller (DC) to establish a centrail
 
 ### Enterprise identity & Automation
 
-* **Organizational Hierarchy:* Created a custom Organizational Unit (OU) named "_Employees" to maintain a professional directory structure outside of default system containers.
-* **Security Group Provisioning:* Established the "IT_Admins" Global Security Group to implement Role-Based Access Control (RBAC).
-* **PowerShell AUtomation:* Developed and executed a PowerShell script utilizing a "for" loop to bulk-provision 1,000 yser accounts (User1 - User 1000) within the "_Employees" OU.
-* **Scalability Simulation:* This phase simulates a large-scale corporate onboarding and demonstrates proficiency in System Administration and automation scripting.
+* **Organizational Hierarchy:** Created a custom Organizational Unit (OU) named "_Employees" to maintain a professional directory structure outside of default system containers.
+* **Security Group Provisioning:** Established the "IT_Admins" Global Security Group to implement Role-Based Access Control (RBAC).
+* **PowerShell AUtomation:** Developed and executed a PowerShell script utilizing a "for" loop to bulk-provision 1,000 yser accounts (User1 - User 1000) within the "_Employees" OU.
+* **Scalability Simulation:** This phase simulates a large-scale corporate onboarding and demonstrates proficiency in System Administration and automation scripting.
 
 
 
 ### Automation Challanges Overcome
 
-* **Parameter Binding Error:* Encountered a "ParameterBindingException" when attempting to use a non-standard color ("Gold") in the script.
-* **Syntax Resolution:* Identified and corrected the parameter to "Yellow" using PowerShell color enumerators to ensure a clean execution.
-*  **Network Status Discrepancy:* Observed the Windows "Globe" icon incorrectly reporting no internet access despite active connectivity.
-*  **Connectivity Validation:* Validated the DNS service via browser testing and confirmed the icon as a common visual sync delay in isolated lab environments.
+* **Parameter Binding Error:** Encountered a "ParameterBindingException" when attempting to use a non-standard color ("Gold") in the script.
+* **Syntax Resolution:** Identified and corrected the parameter to "Yellow" using PowerShell color enumerators to ensure a clean execution.
+*  **Network Status Discrepancy:** Observed the Windows "Globe" icon incorrectly reporting no internet access despite active connectivity.
+*  **Connectivity Validation:** Validated the DNS service via browser testing and confirmed the icon as a common visual sync delay in isolated lab environments.
   
 
