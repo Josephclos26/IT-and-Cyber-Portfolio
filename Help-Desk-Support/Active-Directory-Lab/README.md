@@ -5,7 +5,7 @@
 
 
 ### Project Overview
-This lab demonstrates the end-to-end deployment of a **Windows Server 2022** environment. The project is structured into four distinct phases, covering initial provisioning, domain promotion, security structuring, and large-scale automation.
+This lab demonstrates the end-to-end deployment of a **Windows Server 2022** environment. The project is structured into five distinct phases, covering initial provisioning, domain promotion, security structuring, and large-scale automation.
 
 
 
@@ -78,4 +78,25 @@ To simulate a real-world corporate onboarding event, I utilized scripting to aut
 * **Incident:** The script failed with a **ParameterBindingException** because the color "Gold" is not a standard PowerShell enumerator.
    * **Resolution:** Researched the **System.ConsoleColor** list and corrected the code to use "Yellow", allowing the script to complete the 1,000-user creation.
 
+
+
+## Phase 5: Client-Side integration & Policy Enforcement
+   The goal of this phase was to join a Windows 11 workstation to the **carlos.local** domain and verify that administrative security controls are successfully enforced on remote assets.
+
+* **Client Provisioning:** Deployed a Windows 11 Pro VM and optimized it for the lab environment using VirtualBox Guest Additions for seamless scaling and driver performance.
+* **Domain Integration:** Performed a "Network Handshake" by configuring a static DNS pointing to the Domain Controller (10.0.2.10) and successfully joined the workstation to the **carlos.local** forest.
+* **Security Validation:** Authenticated as a domain user (User67) and verified Least Privilege by confirming the user was restricted from accessing the Control Panel and administrative terminals.
+* **Tools Used:**
+   * **Group Policy Management (GPMC):** To create and link security objects to the **_Employees** OU.
+   * **Active Directory Users & Computers (ADUC):** For administrative password resets and user account management.
+   * **Command Line (gpresult/r): To verify policy application on the client machine.
+ 
+### Incidents & Resolutions
+
+* **Incident:** Encountered a "Media disconnected" status and "General Failure" when attempting to pink the Domain Controller.
+   * **Resolution:**Identified that the virtual network adapter was disconnected during the OOBE bypass; re-enabled the Cable Connected status in VirtualBox and tansitioned from NAT to Internal Network **(Intnet)**
+* **Incident:**Group Policy Objects (GPOs) were showing as **N/A** on the client machine despite a successful domain join.
+   * **Resolution:** Diagnosed the issue as a "Link Gap"; the policy existed but was n ot physically linked to the **_Employees** OU. Manually established the link in GPMC and ran **gpupdate /force** to sync the workstation.
+* **Incident:** The GPO Settings report failed to load on the server due to **IE Enhanced Security Configuration** blocking the internal report display.
+   * **Resolution:** Temporarily disabled IE Hardening for Administrators within Server Manager, allowing the GPMC to generate the report and verify the "Control Panel" restriction was active.
 
