@@ -89,13 +89,13 @@ To simulate a real-world corporate onboarding event, I utilized scripting to aut
 * **Tools Used:**
    * **Group Policy Management (GPMC):** To create and link security objects to the **_Employees** OU.
    * **Active Directory Users & Computers (ADUC):** For administrative password resets and user account management.
-   * **Command Line (gpresult/r): To verify policy application on the client machine.
+   * **Command Line (gpresult/r):** To verify policy application on the client machine.
  
 ### Incidents & Resolutions
 
 * **Incident:** Encountered a "Media disconnected" status and "General Failure" when attempting to pink the Domain Controller.
-   * **Resolution:**Identified that the virtual network adapter was disconnected during the OOBE bypass; re-enabled the Cable Connected status in VirtualBox and tansitioned from NAT to Internal Network **(Intnet)**
-* **Incident:**Group Policy Objects (GPOs) were showing as **N/A** on the client machine despite a successful domain join.
+   * **Resolution:** Identified that the virtual network adapter was disconnected during the OOBE bypass; re-enabled the Cable Connected status in VirtualBox and tansitioned from NAT to Internal Network **(Intnet)**
+* **Incident:** Group Policy Objects (GPOs) were showing as **N/A** on the client machine despite a successful domain join.
    * **Resolution:** Diagnosed the issue as a "Link Gap"; the policy existed but was n ot physically linked to the **_Employees** OU. Manually established the link in GPMC and ran **gpupdate /force** to sync the workstation.
 * **Incident:** The GPO Settings report failed to load on the server due to **IE Enhanced Security Configuration** blocking the internal report display.
    * **Resolution:** Temporarily disabled IE Hardening for Administrators within Server Manager, allowing the GPMC to generate the report and verify the "Control Panel" restriction was active.
