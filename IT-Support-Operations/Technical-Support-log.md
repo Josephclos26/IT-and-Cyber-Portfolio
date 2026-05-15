@@ -1,7 +1,7 @@
 # Technical Support & Operations Log
 This log documents real-time troubleshooting, system maintenance, and "Break/Fix" scenarios performed within the **carlos.local** lab environment. Each entry follows a IT ticketing format.
 
-
+---
 
 ## Ticket #1042: Restricted Access Failure (GPO)
 **Date:** May 14, 2026
@@ -26,9 +26,7 @@ The **Group Policy Link** for the '_Employees' Organizational Unit (OU) was foun
 2. **Sync:** Forced a policy refresh on the client using 'gpupdate /force'.
 3. **Verification:** Re-ran 'gpresult /r' and confirmed the policy is now **Applied**. Control Panel access is successfully restricted.
 
-
-
-
+---
 
 ## Ticket #1043: Account Lockout - User67
 **Date:** May 14, 2026
@@ -48,9 +46,7 @@ User exceeded the maximum number of failed login attempts, triggering the Domain
 2. Located User67 and verified the account was locked under the Account tab.
 3. Manually unlocked the account and verified the user regained access to the workstation.
 
-
-
-
+---
 
 ## Ticket #1044: Password Reset Request
 **Date:** May 14, 2026
