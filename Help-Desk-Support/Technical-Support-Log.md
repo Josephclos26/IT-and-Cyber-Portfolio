@@ -1,7 +1,7 @@
 # Technical Support & Operations Log
 This log documents real-time troubleshooting, system maintenance, and "Break/Fix" scenarios performed within the **carlos.local** lab environment. Each entry follows a IT ticketing format.
 
-
+# Scenario 1
 
 ## Ticket #1042: Restricted Access Failure (GPO)
 **Date:** May 14, 2026
