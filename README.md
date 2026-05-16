@@ -6,7 +6,7 @@ Welcome to my technical portfolio. This repository documents hands-on engineerin
 
 ## Portfolio Breakdown
 
-### IT-Support-Operations/IT-Support-Operations
+### IT-Support-Operations
 * **Technical Support Log:** Comprehensive break/fix scenario logs detailing ticketing simulations, analytical troubleshooting methodologies, and root-cause analysis.
 * **Key Skills:** Ticket Lifecycle, Customer Support, Issue Isolation.
 
