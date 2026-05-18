@@ -45,6 +45,11 @@ Identified a cluster of **Audit Failure** events matching **Event ID 4625** (An 
 * **Logon Type:** 2 (Interactive - physical keyboard entry at the local machine).
 * **Analysis:** The repetition of failed logins in a short window indicates a manual brute-force or guess-attack pattern on the local administrator account.
 
+### **Potential Causes**
+* **User Credential Typos:** Standard authentication errors resulting from manual keyboard entry errors or forgotten credentials.
+* **Stale Cached Credentials:** Automated background services or mapped drives attempting authentication using expired, cached passwords following a recent password change.
+* **Brut-Force Activity:** Intentional, repetitive login attempts aimed at cracking high-value administrative accounts via credential guessing.
+
 ### **Containment & Resolution**
 1. **Access Control:** Verified that the account lockout policy is active to automatically lock accounts after consecutive failed attempts.
 2. **Hardening:** Confirmed that the built-in Administrator account name is restricted or monitored heavily for anomalous interactive logons.
