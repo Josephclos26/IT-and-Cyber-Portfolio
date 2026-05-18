@@ -28,3 +28,28 @@ Discovered that a standard warehouse user account (**User67**) was incorrectly n
 ### **Security+ Knowledge Mapping**
 * **Objective 1.2:** Analyzing organizational security posture (Threats & Vulnerabilities).
 * **Objective 3.0:** Implementing Identity and Access Management concepts.
+
+---
+
+## Incident #1046: Brute-Force Authentication Auditing
+**Date:** May 18, 2026
+**Category:** Security Monitoring & Log Analysis
+**Priority:** Medium
+
+### **The Detection**
+Monitored the Windows Security Event Log using Event Viewer on workstation 'Chepe.carlos.local' to investigate potential unauthorized authentication attempts.
+
+### **The Findings**
+Identified a cluster of **Audit Failure** events matching **Event ID 4625** (An account failed to log on).
+* **Target Account:** Administrator
+* **Logon Type:** 2 (Interactive - physical keyboard entry at the local machine).
+* **Analysis:** The repetition of failed logins in a short window indicates a manual brute-force or guess-attack pattern on the local administrator account.
+
+### **Containment & Resolution**
+1. **Access Control:** Verified that the account lockout policy is active to automatically lock accounts after consecutive failed attempts.
+2. **Hardening:** Confirmed that the built-in Administrator account name is restricted or monitored heavily for anomalous interactive logons.
+3. **Log Hygiene:** Utilized administrative privileges ('Run as administrator') to safely review the logs, maintaining proper security isolation.
+
+### **Security+ Knowledge Mapping**
+* **Objective 1.2:** Analyzing authorization and authentication logs (Audit Failures.)
+* **Objective 4.0:** Security Operations and Monitoring Concepts (SIEM/Log Analysis fundamentals).
