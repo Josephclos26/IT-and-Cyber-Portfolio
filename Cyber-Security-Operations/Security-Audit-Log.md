@@ -48,7 +48,7 @@ Identified a cluster of **Audit Failure** events matching **Event ID 4625** (An 
 ### **Potential Causes**
 * **User Credential Typos:** Standard authentication errors resulting from manual keyboard entry errors or forgotten credentials.
 * **Stale Cached Credentials:** Automated background services or mapped drives attempting authentication using expired, cached passwords following a recent password change.
-* **Brut-Force Activity:** Intentional, repetitive login attempts aimed at cracking high-value administrative accounts via credential guessing.
+* **Brute-Force Activity:** Intentional, repetitive login attempts aimed at cracking high-value administrative accounts via credential guessing.
 
 ### **Containment & Resolution**
 1. **Access Control:** Verified that the account lockout policy is active to automatically lock accounts after consecutive failed attempts.
