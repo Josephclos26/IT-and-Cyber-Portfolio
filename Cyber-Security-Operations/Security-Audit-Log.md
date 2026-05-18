@@ -32,9 +32,9 @@ Discovered that a standard warehouse user account (**User67**) was incorrectly n
 ---
 
 ## Incident #1046: Brute-Force Authentication Auditing
-**Date:** May 18, 2026
-**Category:** Security Monitoring & Log Analysis
-**Priority:** Medium
+**Date:** May 15, 2026  
+**Category:** Identity & Access Management (IAM)  
+**Priority:** Critical
 
 ### **The Detection**
 Monitored the Windows Security Event Log using Event Viewer on workstation 'Chepe.carlos.local' to investigate potential unauthorized authentication attempts.
