@@ -9,7 +9,7 @@ This log documents proactive network surface area audits conducted within the **
 **Priority:** Low (Proactive Hardening Verification)
 
 ### **The Detection**
-Utilized native command-line utilities ('netstat') with administrative privileges on Domain Controller 'DC01' to map all active TCP/UDP daemons currently in a `LISTENING' state.
+Utilized native command-line utilities ('netstat') with administrative privileges on Domain Controller 'DC01' to map all active TCP/UDP daemons currently in a 'LISTENING' state.
 
 ### **The Finding**
 An analysis of the open socket connections confirmed that the domain controller is securely running core infrastructure services while keeping legacy cleartext pathways closed:
