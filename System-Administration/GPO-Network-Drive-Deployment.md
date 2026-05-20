@@ -34,6 +34,11 @@ The storage infrastructure is split into two operational tiers:
 * Navigated through the **User Configuration** preference hives to isolate mapping execution directly to authenticating users rather than static hardware endpoints.
 * Applied conditional logic using the Group Policy **Item-Level Targeting** engine to bind the 'P:\' drive exclusively to security principal **'SG-Packing-Dept'**.
 
+### 4. GPO Orchestration & Item-Level Targeting
+* Enacted a centralized policy container named **'GPO-Map-Network-Drive'** linked directly to the root of the domain.
+* Navigated through the **User Configuration** preference hives to isolate mapping execution directly to authenticating users rather than static hardware endpoints.
+* Applied conditional logic using the Group Policy **Item-Level Targeting** engine to bind the 'P:\' drive exclusively to security principal **'SG-Packing-Dept'**.
+
 ---
 
 ## Client-Side Verification Testing (Runbook)
