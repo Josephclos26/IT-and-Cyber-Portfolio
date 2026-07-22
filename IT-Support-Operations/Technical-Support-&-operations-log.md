@@ -63,3 +63,26 @@ User reported they had forgotten their domain password and were unable to access
 2. Enabled **"User must change password at next logon"** to ensure account privacy.
 3. **TIP:** Advised a full system restart to clear cached credentials and ensure the client synchronized with the Domain Controller's new password data.
 4. Confirmed user successfully updated their password and regained system access.
+
+
+
+## Ticket #1045: VirtualBox Bridge & ICMP Connectivity Verification
+**Date:** July 21, 2026
+**Status:** Resolved
+**Priority:** Medium (Infrastructure / Network Setup)
+
+### **The Issue**
+New lab VMs (Windows Server and Windows 11 Client) were unable to communicate over the network. Pings from the Windows 11 client (`192.168.0.20`) to the Windows Server (`192.168.0.10`) were timing out despite both machines being configured on the same subnet (`192.168.0.0/24`).
+
+### **The Investigation**
+* **Hardware & Link Check:** Verified physical network adapter binding to the external TP-Link switch and enabled `Promiscuous Mode: Allow VMs` in VirtualBox bridged settings.
+* **IP Configuration:** Assigned static IPs (`192.168.0.10` for Server, `192.168.0.20` for Client) and verified interface status using `ipconfig`.
+* **Firewall Isolation:** Tested ICMP traffic using `ping 192.168.0.10` from the client; confirmed packet drop at the server host firewall.
+
+### **The Root Cause**
+The Windows Server host firewall was enforcing default inbound security rules, dropping ICMP Echo Request (ping) packets from non-local subnets / unauthorized services.
+
+### **The Resolution**
+1. **Firewall Rule Management:** Executed PowerShell as Administrator on the Windows Server to enable ICMP traffic through the built-in firewall display group:
+   ```powershell
+   Enable-NetFirewallRule -DisplayGroup "File and Printer Sharing"
