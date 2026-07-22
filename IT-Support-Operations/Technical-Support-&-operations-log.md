@@ -86,3 +86,16 @@ The Windows Server host firewall was enforcing default inbound security rules, d
 1. **Firewall Rule Management:** Executed PowerShell as Administrator on the Windows Server to enable ICMP traffic through the built-in firewall display group:
    ```powershell
    Enable-NetFirewallRule -DisplayGroup "File and Printer Sharing"
+
+
+
+## Ticket #1046: Bulk AD User Attribute Update & Asset Tagging
+
+- **Status:** Closed
+- **Category:** Active Directory / Automation
+- **Description:** Updated user attributes (Title, Department, Company) and assigned asset tags for new client onboarding.
+- **Actions Taken:**
+  - Standardized user naming conventions for target accounts (`User1` to `User5`).
+  - Executed custom PowerShell script utilizing `Set-ADUser` to apply bulk attribute changes.
+  - Verified property assignment via `Get-ADUser` pipeline filtering.
+- **Verification:** Successfully confirmed updated fields in ADUC and PowerShell console.
