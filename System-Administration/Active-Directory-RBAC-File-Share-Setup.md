@@ -6,12 +6,12 @@
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 This project demonstrates advanced Active Directory (AD) administration following initial domain deployment. It covers automated user attribute management via PowerShell, secure departmental network share provisioning using SMB and NTFS permissions, and security validation through Role-Based Access Control (RBAC) testing.
 
 ---
 
-## 🛠️ Phase 1: Bulk User Attribute Automation
+## Phase 1: Bulk User Attribute Automation
 
 ### Objective
 Populate essential corporate metadata (Title, Department, Company, Description) and asset tracking tags for domain users to simulate automated onboarding and asset tracking.
